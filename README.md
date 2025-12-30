@@ -1,4 +1,4 @@
-# ShortsRecipe Landing Page
+# ParrotKit Landing Page
 
 A modern, responsive landing page built with Next.js 14, TypeScript, and Tailwind CSS.
 
@@ -110,7 +110,7 @@ Update the `handleSubmit` function in `FinalCTA.tsx` to send data to your backen
 ## Project Structure
 
 ```
-shorts-recipe-landing/
+parrot-kit-landing/
 ├── app/
 │   ├── globals.css       # Global styles
 │   ├── layout.tsx        # Root layout

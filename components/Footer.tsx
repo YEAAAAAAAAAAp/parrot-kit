@@ -5,13 +5,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-              ShortsRecipe
+              ParrotKit
             </h3>
             <p className="text-gray-400 mb-4">
               Turn any Short into a shoot-ready recipe.
             </p>
             <p className="text-gray-500 text-sm">
-              © 2024 ShortsRecipe. All rights reserved.
+              © 2024 ParrotKit. All rights reserved.
             </p>
           </div>
 

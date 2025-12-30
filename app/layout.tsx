@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Shorts Recipe - Turn Any Short into a Shoot-Ready Recipe',
+  title: 'Parrot Kit - Turn Any Short into a Shoot-Ready Recipe',
   description: 'Paste a TikTok, Reels, or Shorts link. Get a repeatable shooting + editing recipe—hooks, beats, shots, captions, pacing, and CTA.',
 }
 

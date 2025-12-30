@@ -1,25 +1,56 @@
 'use client'
 
 import { useState } from 'react'
+import { UserRole } from '@/lib/role'
 
 export default function FinalCTA() {
-  const [formData, setFormData] = useState({
+
+  type WaitlistForm = {
+    name: string
+    email: string
+    role: UserRole | ''
+  }
+
+  const [formData, setFormData] = useState<WaitlistForm>({
     name: '',
     email: '',
     role: ''
   })
+
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const roleOptions = [
+    { label: 'Aspiring creator', value: UserRole.ASPIRING },
+    { label: 'Prospective creator', value: UserRole.PROSPECTIVE },
+    { label: 'Brand', value: UserRole.BRAND },
+    { label: 'Marketer', value: UserRole.MARKETER },
+    { label: 'Agency', value: UserRole.AGENCY }
+  ]
+
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send to your backend/email service
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({ name: '', email: '', role: '' })
-    }, 3000)
+
+    const res = await fetch('/api/waitlist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+
+    if (res.ok) {
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setFormData({ name: '', email: '', role: '' })
+      }, 3000)
+    } else {
+      alert('Something went wrong. Please try again.')
+    }
   }
+
 
   return (
     <section id="cta" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-pink-600">
@@ -61,16 +92,16 @@ export default function FinalCTA() {
             
             <select
               value={formData.role}
-              onChange={(e) => setFormData({...formData, role: e.target.value})}
+              onChange={(e) => setFormData({...formData, role: e.target.value as UserRole})}
               required
               className="w-full px-4 py-3 rounded-lg bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white transition"
             >
               <option value="" disabled>I&apos;m a...</option>
-              <option value="aspiring">Aspiring creator</option>
-              <option value="prospective">Prospective creator</option>
-              <option value="brand">Brand</option>
-              <option value="marketer">Marketer</option>
-              <option value="agency">Agency</option>
+              {roleOptions.map(r => (
+                <option key={r.value} value={r.value}>
+                  {r.label}
+                </option>
+              ))}
             </select>
 
             <button 
