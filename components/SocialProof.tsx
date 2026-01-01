@@ -13,12 +13,12 @@ export default function SocialProof() {
 
   const handleInterviewClick = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      ;(window as any).gtag('event', 'interview_click', {
+      ;(window as any).gtag('event', 'contact_click', {
         event_category: 'engagement',
-        event_label: 'Request User Interview'
+        event_label: 'Talk to Us Email'
       })
     }
-    // Add your interview booking logic here
+    window.location.href = 'mailto:ParrotKit@gmail.com?subject=I want to talk about ParrotKit'
   }
 
   return (
@@ -46,13 +46,13 @@ export default function SocialProof() {
               onClick={handleInterviewClick}
               className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl hover:bg-purple-50 transition font-semibold"
             >
-              Talk to us (10 min)
+              Talk to us
             </button>
           </div>
 
           <p className="text-gray-500">
             Want a faster invite?{' '}
-            <span className="font-semibold text-purple-600">Book a 10-minute user interview</span>
+            <span className="font-semibold text-purple-600">Book a Free demo</span>
           </p>
         </div>
       </div>
