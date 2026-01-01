@@ -7,6 +7,9 @@ import UnlockModal from './UnlockModal'
 import FOMOWidget from './FOMOWidget'
 
 const exampleShorts = [
+  'tT1JRa28iL0',
+  'QagIcROVwxM',
+  'EeWvoKgSkmc',
   'SNNbkRkmxM8',
   'E7qWFWQh_sk',
   'Gx5onoICJ9s',
