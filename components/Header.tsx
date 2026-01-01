@@ -2,6 +2,15 @@
 
 export default function Header() {
   const scrollToSection = (id: string) => {
+    // GA4 Event
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      ;(window as any).gtag('event', 'navigation_click', {
+        event_category: 'engagement',
+        event_label: `Nav: ${id}`,
+        navigation_target: id
+      })
+    }
+    
     const element = document.getElementById(id)
     element?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -32,7 +41,15 @@ export default function Header() {
           </div>
 
           <button 
-            onClick={() => scrollToSection('cta')}
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                ;(window as any).gtag('event', 'cta_click', {
+                  event_category: 'conversion',
+                  event_label: 'Header Get Early Access'
+                })
+              }
+              scrollToSection('cta')
+            }}
             className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition font-medium"
           >
             Get early access

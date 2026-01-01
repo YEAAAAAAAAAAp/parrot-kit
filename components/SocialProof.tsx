@@ -1,4 +1,26 @@
+'use client'
+
 export default function SocialProof() {
+  const handleJoinClick = () => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      ;(window as any).gtag('event', 'cta_click', {
+        event_category: 'conversion',
+        event_label: 'Social Proof Join Creators'
+      })
+    }
+    document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleInterviewClick = () => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      ;(window as any).gtag('event', 'contact_click', {
+        event_category: 'engagement',
+        event_label: 'Talk to Us Email'
+      })
+    }
+    window.location.href = 'mailto:ParrotKit@gmail.com?subject=I want to talk about ParrotKit'
+  }
+
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -14,17 +36,23 @@ export default function SocialProof() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <button className="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition font-semibold">
+            <button 
+              onClick={handleJoinClick}
+              className="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition font-semibold"
+            >
               Join us with 10K+ Creators
             </button>
-            <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl hover:bg-purple-50 transition font-semibold">
-              Talk to us (10 min)
+            <button 
+              onClick={handleInterviewClick}
+              className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-xl hover:bg-purple-50 transition font-semibold"
+            >
+              Talk to us
             </button>
           </div>
 
           <p className="text-gray-500">
             Want a faster invite?{' '}
-            <span className="font-semibold text-purple-600">Book a 10-minute user interview</span>
+            <span className="font-semibold text-purple-600">Book a Free demo</span>
           </p>
         </div>
       </div>

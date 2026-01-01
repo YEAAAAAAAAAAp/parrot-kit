@@ -30,16 +30,21 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li><a href="#" className="hover:text-white transition">About</a></li>
               <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Contact</a></li>
+              <li><a href="mailto:ParrotKit@gmail.com" className="hover:text-white transition">Contact</a></li>
               <li><a href="#" className="hover:text-white transition">Privacy</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            Built with ❤️ for creators
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-gray-500 text-sm">
+              Built with ❤️ for creators
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
+              Contact: <a href="mailto:ParrotKit@gmail.com" className="text-purple-400 hover:text-purple-300 transition">ParrotKit@gmail.com</a>
+            </p>
+          </div>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white transition">
               <span className="sr-only">Twitter</span>

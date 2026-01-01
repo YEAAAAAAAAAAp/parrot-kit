@@ -15,7 +15,7 @@ export default function HowItWorks() {
     {
       number: '3',
       title: 'Get a shoot-ready recipe',
-      description: 'A checklist you can follow today—and reuse as a template tomorrow.',
+      description: 'A checklist you can follow today, and reuse as a template tomorrow.',
       icon: '📋'
     }
   ]

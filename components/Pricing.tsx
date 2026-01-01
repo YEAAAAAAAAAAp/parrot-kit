@@ -1,8 +1,10 @@
+import { landingConfig } from '@/lib/landingConfig'
+
 export default function Pricing() {
   const plans = [
     {
       name: 'Pro',
-      price: '$20',
+      price: `$${landingConfig.proMonthlyPrice}`,
       period: '/month',
       description: 'For solo creators who want to ship consistently.',
       features: [
@@ -11,11 +13,12 @@ export default function Pricing() {
         'Export shot list + caption flow + edit cues',
         'Priority in invite batches'
       ],
-      highlighted: false
+      highlighted: false,
+      earlyBirdNote: `Lock in $${landingConfig.earlyBirdProPrice}/mo if you join by ${landingConfig.earlyBirdDeadline} (later $${landingConfig.laterProPrice}/mo)`
     },
     {
       name: 'Team',
-      price: '$35',
+      price: `$${landingConfig.teamMonthlyPrice}`,
       period: '/month',
       description: 'For small teams and agencies running repeatable production.',
       features: [
@@ -25,46 +28,104 @@ export default function Pricing() {
         'Collaboration (notes + version history)',
         'Team priority support'
       ],
-      highlighted: true
+      highlighted: true,
+      earlyBirdNote: `Lock in $${landingConfig.earlyBirdTeamPrice}/mo if you join by ${landingConfig.earlyBirdDeadline} (later $${landingConfig.laterTeamPrice}/mo)`
+    },
+    {
+      name: 'Founding Drop',
+      price: `$${landingConfig.foundingDropOneTimePrice}`,
+      period: ' one-time',
+      description: `${landingConfig.foundingDropRecipeCount} human-crafted recipes in ${landingConfig.foundingDropDeliveryHours}h. Skip the wait.`,
+      features: [
+        `${landingConfig.foundingDropRecipeCount} custom recipes for your niche`,
+        `${landingConfig.foundingDropDeliveryHours}h delivery guarantee`,
+        'Shot-by-shot breakdown + b-roll notes',
+        'Editing timeline suggestions',
+        `Only ${landingConfig.foundingDropSpotsLeft}/${landingConfig.foundingDropTotalSpots} spots left`
+      ],
+      highlighted: false,
+      isLimited: true,
+      ctaText: 'Get Founding Drop'
     }
   ]
 
+  const handlePlanClick = (plan: typeof plans[0]) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      ;(window as any).gtag('event', 'pricing_click', {
+        event_category: 'conversion',
+        event_label: `Pricing: ${plan.name}`,
+        plan_name: plan.name,
+        plan_price: plan.price
+      })
+    }
+
+    if (plan.isLimited) {
+      // Founding Drop - open email
+      const subject = encodeURIComponent(landingConfig.foundingDropContactSubject)
+      const body = encodeURIComponent(`Hi, I'm interested in the Founding Concierge Drop.
+
+Please let me know the next steps!`)
+      window.location.href = `mailto:${landingConfig.supportEmail}?subject=${subject}&body=${body}`
+    } else {
+      // Regular plans - scroll to CTA
+      document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">Simple, transparent pricing</h2>
-          <p className="text-xl text-gray-600">
-            We&apos;re validating pricing with early users—join now to lock in early access.
+          <h2 className="text-4xl md:text-5xl font-bold">Simple pricing, powerful results</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Join early to lock in special pricing. Limited spots available.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`rounded-2xl p-8 ${
+              className={`rounded-3xl p-8 relative transition-all duration-300 ${
                 plan.highlighted 
-                  ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-2xl scale-105' 
-                  : 'bg-white border-2 border-gray-200'
+                  ? 'bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-2xl scale-105 hover:scale-110' 
+                  : 'bg-white border-2 border-gray-200 shadow-lg hover:shadow-2xl hover:border-purple-300'
               }`}
             >
+              {plan.isLimited && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                    🔥 LIMITED
+                  </span>
+                </div>
+              )}
+
               <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
               <div className="mb-4">
-                <span className="text-5xl font-bold">{plan.price}</span>
-                <span className={`text-lg ${plan.highlighted ? 'text-white/80' : 'text-gray-500'}`}>
+                <span className="text-4xl font-bold">{plan.price}</span>
+                <span className={`text-sm ${plan.highlighted ? 'text-white/80' : 'text-gray-500'}`}>
                   {plan.period}
                 </span>
               </div>
-              <p className={`mb-8 text-lg ${plan.highlighted ? 'text-white/90' : 'text-gray-600'}`}>
+              <p className={`mb-6 ${plan.highlighted ? 'text-white/90' : 'text-gray-600'}`}>
                 {plan.description}
               </p>
 
-              <ul className="space-y-4 mb-8">
+              {plan.earlyBirdNote && (
+                <div className={`mb-6 p-3 rounded-lg text-sm ${
+                  plan.highlighted 
+                    ? 'bg-white/20 text-white' 
+                    : 'bg-purple-50 text-purple-700'
+                }`}>
+                  🎯 <strong>Early-bird:</strong> {plan.earlyBirdNote}
+                </div>
+              )}
+
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
+                  <li key={idx} className="flex items-start gap-2 text-sm">
                     <svg 
-                      className={`w-6 h-6 flex-shrink-0 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} 
+                      className={`w-5 h-5 flex-shrink-0 ${plan.highlighted ? 'text-white' : 'text-purple-600'}`} 
                       fill="currentColor" 
                       viewBox="0 0 20 20"
                     >
@@ -76,13 +137,16 @@ export default function Pricing() {
               </ul>
 
               <button 
-                className={`w-full py-4 rounded-xl font-semibold text-lg transition ${
+                onClick={() => handlePlanClick(plan)}
+                className={`w-full py-4 rounded-xl font-bold transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95 ${
                   plan.highlighted
-                    ? 'bg-white text-purple-600 hover:bg-gray-100'
+                    ? 'bg-white text-purple-600 hover:bg-gray-50'
+                    : plan.isLimited
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'
                     : 'bg-purple-600 text-white hover:bg-purple-700'
                 }`}
               >
-                Get started
+                {plan.ctaText || 'Get started'}
               </button>
             </div>
           ))}
