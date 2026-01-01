@@ -10,7 +10,7 @@ export default function Problem() {
               </span>
             </div>
             <h2 className="text-4xl font-bold leading-tight">
-              You&apos;ve saved great references—but you don&apos;t have a{' '}
+              You&apos;ve saved great references, but you don&apos;t have a{' '}
               <span className="text-purple-600">reproducible recipe</span> to shoot your own version.
             </h2>
           </div>

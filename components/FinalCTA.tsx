@@ -32,6 +32,15 @@ export default function FinalCTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    // GA4 Event
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'generate_lead', {
+        event_category: 'conversion',
+        event_label: 'Waitlist Signup',
+        user_role: formData.role
+      })
+    }
+
     const res = await fetch('/api/waitlist', {
       method: 'POST',
       headers: {
@@ -41,6 +50,14 @@ export default function FinalCTA() {
     })
 
     if (res.ok) {
+      // GA4 Success Event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'signup_success', {
+          event_category: 'conversion',
+          event_label: 'Waitlist Signup Success'
+        })
+      }
+      
       setSubmitted(true)
       setTimeout(() => {
         setSubmitted(false)
@@ -60,25 +77,29 @@ export default function FinalCTA() {
             Your next Short starts with one link.
           </h2>
           <p className="text-xl text-white/90">
-            Join the waitlist to get early access and a sample recipe. We&apos;re onboarding in batches—secure your spot now.
+            Join the waitlist to get early access and a sample recipe. We&apos;re onboarding in batches, secure your spot now.
           </p>
         </div>
 
         {submitted ? (
-          <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
-            <div className="text-6xl mb-4">🎉</div>
-            <h3 className="text-2xl font-bold mb-2">You&apos;re in!</h3>
-            <p className="text-white/90">We&apos;ll email your invite soon.</p>
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border-2 border-white/20 shadow-2xl">
+            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-3xl font-bold mb-3">You&apos;re on the list!</h3>
+            <p className="text-xl text-white/90">Check your email for next steps.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur rounded-2xl p-8 space-y-4">
+          <form onSubmit={handleSubmit} className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 sm:p-10 space-y-5 border-2 border-white/20 shadow-2xl">
             <input
               type="text"
               placeholder="Your name"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition"
+              className="w-full px-5 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition text-lg"
             />
             
             <input
@@ -87,18 +108,18 @@ export default function FinalCTA() {
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white transition"
+              className="w-full px-5 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition text-lg"
             />
             
             <select
               value={formData.role}
               onChange={(e) => setFormData({...formData, role: e.target.value as UserRole})}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white transition"
+              className="w-full px-5 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white focus:outline-none focus:border-white focus:bg-white/30 transition text-lg"
             >
               <option value="" disabled>I&apos;m a...</option>
               {roleOptions.map(r => (
-                <option key={r.value} value={r.value}>
+                <option key={r.value} value={r.value} className="bg-purple-600 text-white">
                   {r.label}
                 </option>
               ))}
@@ -106,13 +127,13 @@ export default function FinalCTA() {
 
             <button 
               type="submit"
-              className="w-full bg-white text-purple-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition font-bold text-lg"
+              className="w-full bg-white text-purple-600 px-8 py-5 rounded-xl hover:bg-gray-50 active:scale-98 transition-all font-bold text-lg shadow-xl hover:shadow-2xl"
             >
               Get early access
             </button>
 
-            <p className="text-sm text-white/70">
-              No spam. Unsubscribe anytime.
+            <p className="text-sm text-white/70 pt-2">
+              🔒 No spam. Unsubscribe anytime.
             </p>
           </form>
         )}

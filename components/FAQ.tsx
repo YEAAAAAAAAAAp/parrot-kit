@@ -16,7 +16,7 @@ export default function FAQ() {
     },
     {
       question: 'Can it match my niche / tone?',
-      answer: 'Yes—tell us your niche and style, and we tailor the recipe to your channel goals.'
+      answer: 'Yes, tell us your niche and style, and we tailor the recipe to your channel goals.'
     },
     {
       question: 'Do I get a script too?',
@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       question: 'Will it generate the full video?',
-      answer: 'Recipe first. Video drafts are in progress—early users get priority access.'
+      answer: 'Recipe first. Video drafts are in progress, early users get priority access.'
     },
     {
       question: 'How fast is it?',
@@ -44,7 +44,16 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag) {
+                    ;(window as any).gtag('event', 'faq_interaction', {
+                      event_category: 'engagement',
+                      event_label: faq.question,
+                      faq_question: faq.question
+                    })
+                  }
+                  setOpenIndex(openIndex === index ? null : index)
+                }}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition"
               >
                 <span className="text-lg font-semibold pr-8">{faq.question}</span>
