@@ -120,14 +120,14 @@ export default function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Paste a link.{' '}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Get the structure.
+                  Get the viral.
                 </span>{' '}
-                Ship your version, fast.
+                Ship your version fast.
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                 Drop a TikTok / Reels / Shorts link. Get a{' '}
-                <strong className="text-gray-900">repeatable recipe</strong>
+                <strong className="text-gray-900">viral recipe</strong>
                 {' '}with hooks, beats, shots, captions, and CTA.
               </p>
 

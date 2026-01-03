@@ -11,7 +11,7 @@ export default function Footer() {
               Turn any Short into a shoot-ready recipe.
             </p>
             <p className="text-gray-500 text-sm">
-              © 2024 ParrotKit. All rights reserved.
+              © 2025 ParrotKit. All rights reserved.
             </p>
           </div>
 

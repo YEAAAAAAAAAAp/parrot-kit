@@ -8,14 +8,14 @@ export default function HowItWorks() {
     },
     {
       number: '2',
-      title: 'AI deconstructs the structure',
+      title: 'AI analyzes the structure',
       description: 'Hook → beats → shot list → edit cues → CTA.',
       icon: '🧠'
     },
     {
       number: '3',
-      title: 'Get a shoot-ready recipe',
-      description: 'A checklist you can follow today, and reuse as a template tomorrow.',
+      title: 'Get a viral-ready templates',
+      description: 'Instructions you can follow today, and reuse as a template tomorrow.',
       icon: '📋'
     }
   ]
@@ -41,12 +41,6 @@ export default function HowItWorks() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <p className="text-gray-500 italic">
-            Optional: generate a first draft video (coming soon).
-          </p>
         </div>
       </div>
     </section>
