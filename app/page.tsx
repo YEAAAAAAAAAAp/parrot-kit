@@ -85,8 +85,8 @@ export default function Home() {
       <UseCases />
       <WhyUs />
       <Pricing />
-      <FAQ />
       <FinalCTA />
+      <FAQ />
       <Footer />
     </main>
   )
