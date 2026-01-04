@@ -14,7 +14,7 @@ export default function HowItWorks() {
     },
     {
       number: '3',
-      title: 'Get a viral-ready templates',
+      title: 'Get viral-ready templates',
       description: 'Instructions you can follow today, and reuse as a template tomorrow.',
       icon: '📋'
     }
