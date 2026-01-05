@@ -34,7 +34,6 @@ export default function FinalCTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-<<<<<<< HEAD
     // Validation
     const newErrors: {name?: string, email?: string, role?: string} = {}
     if (!formData.name.trim()) {
@@ -55,14 +54,11 @@ export default function FinalCTA() {
       return
     }
 
-    // GA4 Event
-=======
     // Track form submission with our analytics
     analytics.trackFormSubmit('Waitlist', true)
     trackFunnelStep('waitlist_signup', 3, true)
     
     // Also track with GA4
->>>>>>> 99a66f7f6acd330c588dd94845ce7e354e4ba515
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'generate_lead', {
         event_category: 'conversion',
