@@ -37,11 +37,11 @@ export default function FinalCTA() {
     // Validation
     const newErrors: {name?: string, email?: string, role?: string} = {}
     if (!formData.name.trim()) {
-      newErrors.name = "Please enter your name."
+      newErrors.name = "Name is required."
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!formData.email.trim()) {
-      newErrors.email = "Please enter your email address."
+      newErrors.email = "Email is required."
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "Please enter a valid email address."
     }
