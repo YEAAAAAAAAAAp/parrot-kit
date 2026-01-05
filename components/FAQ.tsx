@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { analytics } from '@/lib/analytics'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -45,6 +46,10 @@ export default function FAQ() {
             <div key={index} className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden">
               <button
                 onClick={() => {
+                  // Track FAQ click with our analytics
+                  analytics.trackFAQClick(faq.question)
+                  
+                  // Also track with GA4
                   if (typeof window !== 'undefined' && (window as any).gtag) {
                     ;(window as any).gtag('event', 'faq_interaction', {
                       event_category: 'engagement',

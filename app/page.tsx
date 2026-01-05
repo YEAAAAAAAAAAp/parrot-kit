@@ -13,10 +13,14 @@ import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import { trackPageView } from '@/lib/analytics'
 
 export default function Home() {
   useEffect(() => {
-    // Track page view
+    // Track page view with our analytics
+    trackPageView()
+    
+    // Also track with GA4
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'page_view', {
         page_title: 'Parrot Kit - Home',

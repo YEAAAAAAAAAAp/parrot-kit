@@ -1,4 +1,7 @@
+'use client'
+
 import { landingConfig } from '@/lib/landingConfig'
+import { analytics } from '@/lib/analytics'
 
 export default function Pricing() {
   const plans = [
@@ -50,6 +53,11 @@ export default function Pricing() {
   ]
 
   const handlePlanClick = (plan: typeof plans[0]) => {
+    // Track pricing click with our analytics
+    const price = parseFloat(plan.price.replace(/\$/g, ''))
+    analytics.trackPricingClick(plan.name, price)
+    
+    // Also track with GA4
     if (typeof window !== 'undefined' && (window as any).gtag) {
       ;(window as any).gtag('event', 'pricing_click', {
         event_category: 'conversion',

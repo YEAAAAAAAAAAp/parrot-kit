@@ -5,6 +5,7 @@ import { landingConfig } from '@/lib/landingConfig'
 import type { TeaserData } from '@/lib/types'
 import UnlockModal from './UnlockModal'
 import FOMOWidget from './FOMOWidget'
+import { analytics } from '@/lib/analytics'
 
 const exampleShorts = [
   'tT1JRa28iL0',
@@ -46,6 +47,9 @@ export default function Hero() {
       setError('Please paste a link')
       return
     }
+
+    // Track CTA click
+    analytics.trackCTAClick('Hero', 'Analyze Video')
 
     if (!isValidUrl(link)) {
       setError('Please enter a valid URL')
