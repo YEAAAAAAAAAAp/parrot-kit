@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup:analytics": "node scripts/setup-analytics.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
+    "chart.js": "^4.4.1",
     "next": "14.0.4",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18"
   },
   "devDependencies": {

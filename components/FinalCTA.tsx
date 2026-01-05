@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { UserRole } from '@/lib/role'
+import { analytics, trackFunnelStep } from '@/lib/analytics'
 
 export default function FinalCTA() {
 
@@ -32,7 +33,11 @@ export default function FinalCTA() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // GA4 Event
+    // Track form submission with our analytics
+    analytics.trackFormSubmit('Waitlist', true)
+    trackFunnelStep('waitlist_signup', 3, true)
+    
+    // Also track with GA4
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'generate_lead', {
         event_category: 'conversion',
