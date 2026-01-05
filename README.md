@@ -16,7 +16,7 @@ A modern, conversion-optimized landing page built with Next.js 14, TypeScript, a
 - ⏰ **Real-time Countdown Timer**: Live timer showing days:hours:minutes:seconds until deadline
 - 🎬 **YouTube Shorts Carousel**: Auto-rotating video showcase with manual navigation
 - 🔥 **FOMO Elements**: Urgency messaging with dynamic spot counters
-- 🎁 **Dual Conversion Paths**: Free waitlist + premium Founding Drop option
+- 🎁 **Dual Conversion Paths**: Free waitlist + premium Special offer option
 - 📈 **Analytics Integration**: Full GA4 tracking for funnel/cohort analysis
 - 🎨 **Config-Driven Architecture**: Centralized configuration for easy updates
 
@@ -44,8 +44,8 @@ parrot-kit/
 ├── components/
 │   ├── Hero.tsx                   # Hero with carousel & link analysis
 │   ├── FOMOWidget.tsx             # Real-time countdown & FOMO badges
-│   ├── UnlockModal.tsx            # Gating modal (waitlist/founding drop)
-│   ├── Pricing.tsx                # 3-tier pricing (Pro/Team/Founding)
+│   ├── UnlockModal.tsx            # Gating modal (waitlist/Special offer)
+│   ├── Pricing.tsx                # 3-tier pricing (Pro/Team/Special offer)
 │   ├── OutputPreview.tsx          # Recipe breakdown preview
 │   ├── HowItWorks.tsx             # 3-step process
 │   ├── UseCases.tsx               # Target personas
@@ -71,7 +71,7 @@ export const landingConfig = {
   nextBatchDeadline: new Date('2026-01-08T23:59:59'),
   nextBatchInvites: 500,
   
-  // Founding Drop
+  // Special offer
   foundingDropTotalSpots: 100,
   foundingDropSpotsLeft: 77,
   foundingDropOneTimePrice: 39,
@@ -112,7 +112,7 @@ export const landingConfig = {
 3. "Unlock Full Recipe" triggers modal
 4. Modal offers:
    - **Free**: Join waitlist (stores rank in localStorage)
-   - **Paid**: Founding Drop $39 (opens mailto)
+   - **Paid**: Special offer $39 (opens mailto)
 
 ### 4. GA4 Event Tracking
 Tracked events:
@@ -171,7 +171,7 @@ Edit `lib/landingConfig.ts`:
 nextBatchDeadline: new Date('2026-01-15T23:59:59')
 ```
 
-### Change Founding Drop Spots
+### Change Special offer Spots
 ```typescript
 foundingDropSpotsLeft: 50  // Update as spots are taken
 ```

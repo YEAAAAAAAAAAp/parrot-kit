@@ -25,8 +25,14 @@ export default function Problem() {
               We turn inspiration into <span className="text-purple-600">instructions</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Hook formulas, storyboards, shot lists, captions, edit cues, and CTAs.
+              We reverse-engineer your references into a Viral Blueprint.<br />
+              You get the exact hook formulas, scripts, shot lists, and edit cues used in the original, turned into a plug-and-play template for your content.
             </p>
+            <img
+              src="/problem.png"
+              alt="Problem illustration"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>

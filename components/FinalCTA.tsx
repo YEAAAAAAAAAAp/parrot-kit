@@ -18,6 +18,7 @@ export default function FinalCTA() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState<{name?: string, email?: string, role?: string}>({})
 
 
   const roleOptions = [
@@ -31,6 +32,26 @@ export default function FinalCTA() {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Validation
+    const newErrors: {name?: string, email?: string, role?: string} = {}
+    if (!formData.name.trim()) {
+      newErrors.name = "Please enter your name."
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!formData.email.trim()) {
+      newErrors.email = "Please enter your email address."
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address."
+    }
+    if (!formData.role) {
+      newErrors.role = "Please select your role."
+    }
+
+    setErrors(newErrors)
+    if (Object.keys(newErrors).length > 0) {
+      return
+    }
 
     // GA4 Event
     if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -59,6 +80,7 @@ export default function FinalCTA() {
       }
       
       setSubmitted(true)
+      setErrors({})
       setTimeout(() => {
         setSubmitted(false)
         setFormData({ name: '', email: '', role: '' })
@@ -101,6 +123,7 @@ export default function FinalCTA() {
               required
               className="w-full px-5 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition text-lg"
             />
+            {errors.name && <p className="text-red-300 text-sm mt-1">{errors.name}</p>}
             
             <input
               type="email"
@@ -110,6 +133,7 @@ export default function FinalCTA() {
               required
               className="w-full px-5 py-4 rounded-xl bg-white/20 border-2 border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition text-lg"
             />
+            {errors.email && <p className="text-red-300 text-sm mt-1">{errors.email}</p>}
             
             <select
               value={formData.role}
@@ -124,6 +148,7 @@ export default function FinalCTA() {
                 </option>
               ))}
             </select>
+            {errors.role && <p className="text-red-300 text-sm mt-1">{errors.role}</p>}
 
             <button 
               type="submit"
