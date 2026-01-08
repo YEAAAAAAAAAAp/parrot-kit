@@ -185,69 +185,108 @@ export default function Hero() {
 
               {/* Teaser Card */}
               {teaser && (
-                <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 rounded-2xl p-6 space-y-4 border-2 border-purple-200 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                <div className="relative bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 rounded-2xl p-6 space-y-4 border-2 border-purple-200 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  {/* Blurred Content */}
+                  <div className="blur-md select-none pointer-events-none">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-bold text-lg">Your Recipe Preview</h3>
+                      </div>
+                      <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
+                        FREE
+                      </span>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-white rounded-lg p-3 shadow-sm">
+                        <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">🎯 Hook</div>
+                        <div className="text-sm font-medium text-gray-800">{teaser.hookType}</div>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-3 shadow-sm">
+                        <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">⚡ Pacing</div>
+                        <div className="text-sm font-medium text-gray-800">{teaser.pacing}</div>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-3 shadow-sm">
+                        <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">✂️ Cuts</div>
+                        <div className="text-sm font-medium text-gray-800">{teaser.cutCount} shots</div>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-3 shadow-sm">
+                        <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">⏱️ Duration</div>
+                        <div className="text-sm font-medium text-gray-800">{teaser.duration}</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">💬 Subtitles</div>
+                      <div className="text-sm font-medium text-gray-800">{teaser.subtitleStyle}</div>
+                    </div>
+
+                    <div className="bg-white rounded-lg p-3 shadow-sm">
+                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">📢 CTA</div>
+                      <div className="text-sm font-medium text-gray-800">{teaser.ctaBeat}</div>
+                    </div>
+                  </div>
+
+                  {/* Unlock Overlay */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-transparent via-white/80 to-white/95 backdrop-blur-sm rounded-2xl p-6">
+                    <div className="text-center space-y-4 max-w-sm">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full shadow-lg">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                       </div>
-                      <h3 className="font-bold text-lg">Your Recipe Preview</h3>
-                    </div>
-                    <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">
-                      FREE
-                    </span>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">🎯 Hook</div>
-                      <div className="text-sm font-medium text-gray-800">{teaser.hookType}</div>
-                    </div>
-                    
-                    <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">⚡ Pacing</div>
-                      <div className="text-sm font-medium text-gray-800">{teaser.pacing}</div>
-                    </div>
-                    
-                    <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">✂️ Cuts</div>
-                      <div className="text-sm font-medium text-gray-800">{teaser.cutCount} shots</div>
-                    </div>
-                    
-                    <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                      <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">⏱️ Duration</div>
-                      <div className="text-sm font-medium text-gray-800">{teaser.duration}</div>
-                    </div>
-                  </div>
+                      
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          Analysis Complete! 🎉
+                        </h3>
+                        <p className="text-gray-600">
+                          Your detailed recipe is ready. Join the waitlist to unlock full access.
+                        </p>
+                      </div>
 
-                  <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                    <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">💬 Subtitles</div>
-                    <div className="text-sm font-medium text-gray-800">{teaser.subtitleStyle}</div>
-                  </div>
+                      <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                        <p className="text-sm font-semibold text-purple-900 mb-2">
+                          Full recipe includes:
+                        </p>
+                        <ul className="text-xs text-purple-800 space-y-1 text-left">
+                          <li className="flex items-center gap-2">
+                            <span className="text-purple-600">✓</span> Shot-by-shot breakdown
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-purple-600">✓</span> Exact timing & pacing
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-purple-600">✓</span> B-roll suggestions
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <span className="text-purple-600">✓</span> Editing timeline
+                          </li>
+                        </ul>
+                      </div>
 
-                  <div className="bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition">
-                    <div className="text-xs text-purple-600 font-bold mb-1 uppercase tracking-wide">📢 CTA</div>
-                    <div className="text-sm font-medium text-gray-800">{teaser.ctaBeat}</div>
-                  </div>
+                      <button
+                        onClick={handleUnlockClick}
+                        className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-xl hover:from-purple-700 hover:to-pink-700 active:scale-98 transition font-bold text-lg shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                        </svg>
+                        Unlock Full Recipe Now
+                      </button>
 
-                  <button
-                    onClick={handleUnlockClick}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 active:scale-98 transition font-bold text-lg shadow-lg hover:shadow-xl"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
-                      </svg>
-                      Unlock Full Recipe
-                    </span>
-                  </button>
-                  
-                  <div className="bg-purple-100 rounded-lg p-3">
-                    <p className="text-xs text-purple-800 text-center leading-relaxed">
-                      <strong>Full recipe includes:</strong> Shot-by-shot breakdown, timing, b-roll ideas, editing timeline & more
-                    </p>
+                      <p className="text-xs text-gray-500">
+                        ✨ Join {landingConfig.creatorsJoined} creators • No payment required
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}

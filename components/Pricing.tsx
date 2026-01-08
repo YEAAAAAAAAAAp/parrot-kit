@@ -38,9 +38,9 @@ export default function Pricing() {
       name: 'Founding Drop',
       price: `$${landingConfig.foundingDropOneTimePrice}`,
       period: ' one-time',
-      description: `${landingConfig.foundingDropRecipeCount} human-crafted recipes in ${landingConfig.foundingDropDeliveryHours}h. Skip the wait.`,
+      description: `Custom recipe in ${landingConfig.foundingDropDeliveryHours}h. Skip the wait.`,
       features: [
-        `${landingConfig.foundingDropRecipeCount} custom recipes for your niche`,
+        `Custom recipe for your niche`,
         `${landingConfig.foundingDropDeliveryHours}h delivery guarantee`,
         'Shot-by-shot breakdown + b-roll notes',
         'Editing timeline suggestions',
