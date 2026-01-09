@@ -204,7 +204,7 @@ Please let me know the next steps!`)
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-gray-700"><strong>{landingConfig.foundingDropRecipeCount} custom recipes</strong> for your niche</span>
+                    <span className="text-gray-700"><strong>Custom recipe</strong> for your niche</span>
                   </div>
                   <div className="flex items-start gap-3 text-sm">
                     <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -234,12 +234,12 @@ Please let me know the next steps!`)
 
                 <div className="flex items-center justify-between mb-5 bg-white rounded-lg p-4">
                   <div>
-                    <div className="text-3xl font-bold text-gray-900">${landingConfig.foundingDropOneTimePrice}</div>
-                    <div className="text-sm text-gray-600">one-time payment</div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">FREE</div>
+                    <div className="text-sm text-gray-600">Limited time offer</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-xs text-gray-500">Save 70%</div>
-                    <div className="text-sm text-gray-400 line-through">$129</div>
+                    <div className="text-xs text-green-600 font-semibold">100% OFF</div>
+                    <div className="text-sm text-gray-400 line-through">${landingConfig.foundingDropOneTimePrice}</div>
                   </div>
                 </div>
 
