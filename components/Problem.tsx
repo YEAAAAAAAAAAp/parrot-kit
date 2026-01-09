@@ -11,22 +11,28 @@ export default function Problem() {
             </div>
             <h2 className="text-4xl font-bold leading-tight">
               You&apos;ve saved great references, but you don&apos;t have a{' '}
-              <span className="text-purple-600">reproducible recipe</span> to shoot your own version.
+              <span className="text-purple-600">winning viral-recipe</span> to shoot your own version
             </h2>
           </div>
 
           <div className="space-y-6">
             <div className="inline-block">
               <span className="text-sm font-semibold text-purple-600 uppercase tracking-wide">
-                The Promise
+                WE PROMISE
               </span>
             </div>
             <h2 className="text-4xl font-bold leading-tight">
               We turn inspiration into <span className="text-purple-600">instructions</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Hook formulas, beat maps, shot lists, captions, edit cues, and CTAs.
+              We reverse-engineer your references into a Viral Blueprint.<br />
+              You get the exact hook formulas, scripts, shot lists, and edit cues used in the original, turned into a plug-and-play template for your content.
             </p>
+            <img
+              src="/problem.png"
+              alt="Problem illustration"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>

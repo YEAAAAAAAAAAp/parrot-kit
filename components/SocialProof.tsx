@@ -27,11 +27,10 @@ export default function SocialProof() {
         <div className="text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold">
-              Built for <span className="text-purple-600">aspiring creators</span> and{' '}
-              <span className="text-purple-600">lean teams</span>
+              There is a secret to <span className="text-purple-600">going viral</span>, But you don't know it
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              who want consistent output without trial-and-error.
+              Copy already-proven viral videos and apply it to your own content
             </p>
           </div>
 

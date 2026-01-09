@@ -6,12 +6,12 @@ export default function WhyUs() {
       icon: '✅'
     },
     {
-      title: 'Not generic tips.',
+      title: 'Straightforward, appliable tips',
       description: 'We extract the exact structure that makes a Short work.',
       icon: '🎯'
     },
     {
-      title: 'Built to be repeatable.',
+      title: 'Access to repeatable viral templates',
       description: 'Save recipes as templates for your channel and team.',
       icon: '🔄'
     }
@@ -21,7 +21,7 @@ export default function WhyUs() {
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">Why us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">Why us?</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">

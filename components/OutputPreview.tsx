@@ -5,7 +5,7 @@ import { useState } from 'react'
 export default function OutputPreview() {
   const outputs = [
     { title: 'Hook formula', time: '0-2s', description: 'Pattern interrupt + promise' },
-    { title: 'Beat map', time: '15-30s', description: 'What happens, when, and why' },
+    { title: 'Storyboard / Script', time: '15-30s', description: 'What happens, when, and why' },
     { title: 'Shot list', time: null, description: 'Framing, actions, props, B-roll cues' },
     { title: 'Caption + on-screen text', time: null, description: 'Style, rhythm, keywords' },
     { title: 'Edit cues', time: null, description: 'Cuts, pacing, sound beats, transitions' },
@@ -17,7 +17,7 @@ export default function OutputPreview() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
-            The breakdown that makes it <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">repeatable</span>
+            The breakdown for repeatable <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">viral content</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">Your complete recipe, delivered in seconds</p>
         </div>

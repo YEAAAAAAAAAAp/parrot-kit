@@ -18,10 +18,8 @@ A modern, conversion-optimized landing page with **real-time analytics dashboard
 - ⏰ **Real-time Countdown Timer**: Live timer showing days:hours:minutes:seconds until deadline
 - 🎬 **YouTube Shorts Carousel**: Auto-rotating video showcase with manual navigation
 - 🔥 **FOMO Elements**: Urgency messaging with dynamic spot counters
-- 🎁 **Dual Conversion Paths**: 
-  - **Free**: Join waitlist (get rank #)
-  - **Founding Drop**: FREE early access (was $20)
-- 🔓 **Blur Effect on Results**: Analysis results gated to drive conversions
+- 🎁 **Dual Conversion Paths**: Free waitlist + premium Special offer option
+- 📈 **Analytics Integration**: Full GA4 tracking for funnel/cohort analysis
 - 🎨 **Config-Driven Architecture**: Centralized configuration for easy updates
 
 ### 📊 Analytics Dashboard Features (NEW!)
@@ -68,8 +66,8 @@ parrot-kit/
 ├── components/
 │   ├── Hero.tsx                   # Hero with blur effect (UPDATED!)
 │   ├── FOMOWidget.tsx             # Real-time countdown & FOMO badges
-│   ├── UnlockModal.tsx            # Gating modal - FREE Founding Drop (UPDATED!)
-│   ├── Pricing.tsx                # 3-tier pricing (UPDATED!)
+│   ├── UnlockModal.tsx            # Gating modal (waitlist/Special offer)
+│   ├── Pricing.tsx                # 3-tier pricing (Pro/Team/Special offer)
 │   ├── OutputPreview.tsx          # Recipe breakdown preview
 │   ├── HowItWorks.tsx             # 3-step process
 │   ├── UseCases.tsx               # Target personas
@@ -113,7 +111,7 @@ export const landingConfig = {
   nextBatchDeadline: new Date('2026-01-08T23:59:59'),
   nextBatchInvites: 500,
   
-  // Founding Drop (NOW FREE!)
+  // Special offer
   foundingDropTotalSpots: 100,
   foundingDropSpotsLeft: 77,
   foundingDropOneTimePrice: 0,    // Changed from 39 to 0 (FREE!)
@@ -192,7 +190,7 @@ export const landingConfig = {
 3. "Unlock Full Recipe" triggers modal
 4. Modal offers:
    - **Free**: Join waitlist (stores rank in localStorage)
-   - **Paid**: Founding Drop FREE (opens mailto)
+   - **Paid**: Special offer $39 (opens mailto)
 
 ### 7. GA4 Event Tracking
 Tracked events:
@@ -272,7 +270,7 @@ Edit `lib/landingConfig.ts`:
 nextBatchDeadline: new Date('2026-01-15T23:59:59')
 ```
 
-### Change Founding Drop Spots
+### Change Special offer Spots
 ```typescript
 foundingDropSpotsLeft: 50  // Update as spots are taken
 ```
