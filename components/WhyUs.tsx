@@ -1,19 +1,22 @@
 export default function WhyUs() {
   const reasons = [
     {
-      title: 'Not just ideas.',
-      description: 'We output a production recipe you can actually follow.',
-      icon: '✅'
+      title: 'Angle',
+      description: 'Real-time camera angle adjustments from your phone—no reshoots needed.',
+      icon: '📐',
+      highlight: true
     },
     {
-      title: 'Not generic tips.',
-      description: 'We extract the exact structure that makes a Short work.',
-      icon: '🎯'
+      title: 'Script',
+      description: 'Hyper-personalized scripts that go beyond generic LLM outputs—production-ready quality.',
+      icon: '✍️',
+      highlight: true
     },
     {
-      title: 'Built to be repeatable.',
-      description: 'Save recipes as templates for your channel and team.',
-      icon: '🔄'
+      title: 'Resolution',
+      description: 'Consistent resolution with color grading and filters built in—professional finish guaranteed.',
+      icon: '🎨',
+      highlight: true
     }
   ]
 

@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-center md:text-left">
             <p className="text-gray-500 text-sm">
-              Built with ❤️ for creators
+              Built with ❤️ for UGC creators
             </p>
             <p className="text-gray-500 text-sm mt-2">
               Contact: <a href="mailto:ParrotKit@gmail.com" className="text-purple-400 hover:text-purple-300 transition">ParrotKit@gmail.com</a>

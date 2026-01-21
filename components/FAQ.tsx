@@ -8,28 +8,36 @@ export default function FAQ() {
 
   const faqs = [
     {
+      question: 'Is this specifically for UGC Creators?',
+      answer: 'Yes, but we go beyond typical sponsored UGC work. ParrotKit helps UGC creators build their own brand and identity by stealing viral formats and making them uniquely yours. Turn winning structures into your signature style—not just brand collabs, but content that grows YOUR audience.'
+    },
+    {
+      question: 'Can I edit the recipe with the chatbot?',
+      answer: 'Absolutely. Our real-time chatbot lets you tweak angles, scripts, and shot details instantly. Just chat with it to customize your recipe until it\'s perfect for your style.'
+    },
+    {
+      question: 'Can I shoot directly in the app?',
+      answer: 'Yes! Once your recipe is ready, you can shoot shot-by-shot directly in the app using your phone camera. No need to switch between apps—everything flows seamlessly from recipe to recording.'
+    },
+    {
+      question: 'What are Angle, Script, and Resolution features?',
+      answer: 'Angle: Real-time camera angle adjustments from your phone. Script: Hyper-personalized scripts beyond generic AI outputs. Resolution: Consistent quality with color grading and filters built in. These are our core differentiators.'
+    },
+    {
       question: 'Does this copy the original video?',
-      answer: 'No. We analyze structure (hook, beats, pacing) and generate a recipe you can adapt with your own content.'
+      answer: 'No. We analyze structure (hook, beats, pacing, Angle, Script, Resolution) and generate a recipe you can adapt with your own unique content and brand voice.'
     },
     {
-      question: 'Which links are supported?',
-      answer: 'TikTok, Instagram Reels, and YouTube Shorts (more soon).'
+      question: 'Which platforms are supported?',
+      answer: 'TikTok, Instagram Reels, and YouTube Shorts. More platforms coming soon based on UGC creator demand.'
     },
     {
-      question: 'Can it match my niche / tone?',
-      answer: 'Yes, tell us your niche and style, and we tailor the recipe to your channel goals.'
+      question: 'How fast will I get my recipe?',
+      answer: 'Instant analysis in seconds. You can then refine it with our chatbot in real-time and start shooting immediately in-app.'
     },
     {
-      question: 'Do I get a script too?',
-      answer: 'You\'ll get hook options + beat-by-beat talking points. Full scripts are optional (coming soon).'
-    },
-    {
-      question: 'Will it generate the full video?',
-      answer: 'Recipe first. Video drafts are in progress, early users get priority access.'
-    },
-    {
-      question: 'How fast is it?',
-      answer: 'A sample breakdown takes seconds. Full tailored recipes may take a bit longer depending on demand.'
+      question: 'Can it match my niche and brand tone?',
+      answer: 'Yes! Tell us your niche, audience, and tone preferences. Our AI tailors every recipe—from hooks to CTAs—to match your UGC creator style and goals.'
     }
   ]
 

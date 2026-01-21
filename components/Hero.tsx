@@ -117,7 +117,7 @@ export default function Hero() {
             <div className="space-y-8">
               <div className="inline-block">
                 <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">
-                  Join {landingConfig.creatorsJoined} creators
+                  Join {landingConfig.creatorsJoined} UGC Creators
                 </span>
               </div>
               
@@ -132,7 +132,7 @@ export default function Hero() {
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                 Drop a TikTok / Reels / Shorts link. Get a{' '}
                 <strong className="text-gray-900">repeatable recipe</strong>
-                {' '}with hooks, beats, shots, captions, and CTA.
+                {' '}with perfect <strong className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Angle</strong>, <strong className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Script</strong>, and <strong className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Resolution</strong>.
               </p>
 
               {/* Input Box */}
@@ -284,7 +284,7 @@ export default function Hero() {
                       </button>
 
                       <p className="text-xs text-gray-500">
-                        ✨ Join {landingConfig.creatorsJoined} creators • No payment required
+                        ✨ Join {landingConfig.creatorsJoined} UGC Creators • No payment required
                       </p>
                     </div>
                   </div>
@@ -333,7 +333,7 @@ export default function Hero() {
               {/* Info Text */}
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
-                  <span className="font-semibold">Real results</span> from creators using our recipes
+                  <span className="font-semibold">Real results</span> from UGC Creators using our recipes
                 </p>
               </div>
             </div>

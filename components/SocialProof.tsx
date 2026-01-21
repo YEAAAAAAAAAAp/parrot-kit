@@ -27,7 +27,7 @@ export default function SocialProof() {
         <div className="text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold">
-              Built for <span className="text-purple-600">aspiring creators</span> and{' '}
+              Built for <span className="text-purple-600">aspiring UGC creators</span> and{' '}
               <span className="text-purple-600">lean teams</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -40,7 +40,7 @@ export default function SocialProof() {
               onClick={handleJoinClick}
               className="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition font-semibold"
             >
-              Join us with 10K+ Creators
+              Join us with 10K+ UGC Creators
             </button>
             <button 
               onClick={handleInterviewClick}

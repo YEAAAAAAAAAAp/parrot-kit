@@ -9,14 +9,19 @@ export default function HowItWorks() {
     {
       number: '2',
       title: 'AI deconstructs the structure',
-      description: 'Hook → beats → shot list → edit cues → CTA.',
+      description: 'Extract Angle, Script, and Resolution—hook → beats → shot list → edit cues → CTA.',
       icon: '🧠'
     },
     {
       number: '3',
       title: 'Get a shoot-ready recipe',
-      description: 'A checklist you can follow today, and reuse as a template tomorrow.',
-      icon: '📋'
+      description: 'Shot-by-shot breakdown with real-time chatbot editing. Tweak your recipe instantly, then shoot directly in-app with your phone.',
+      icon: '📋',
+      bullets: [
+        '📐 Shot-by-shot recipe breakdown',
+        '💬 Real-time chatbot recipe editor',
+        '📱 Direct in-app phone camera shooting'
+      ]
     }
   ]
 
@@ -38,6 +43,17 @@ export default function HowItWorks() {
                 <div className="text-sm font-bold text-purple-600">STEP {step.number}</div>
                 <h3 className="text-2xl font-bold">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
+                
+                {/* Step 3에만 bullet 포인트 추가 */}
+                {step.number === '3' && 'bullets' in step && (
+                  <ul className="space-y-2 mt-4 pt-4 border-t border-purple-200">
+                    {step.bullets.map((bullet, idx) => (
+                      <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           ))}
