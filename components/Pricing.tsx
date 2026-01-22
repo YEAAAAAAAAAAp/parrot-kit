@@ -35,7 +35,7 @@ export default function Pricing() {
       earlyBirdNote: `Lock in $${landingConfig.earlyBirdTeamPrice}/mo if you join by ${landingConfig.earlyBirdDeadline} (later $${landingConfig.laterTeamPrice}/mo)`
     },
     {
-      name: 'Founding Drop',
+      name: 'Special offer',
       price: `$${landingConfig.foundingDropOneTimePrice}`,
       period: ' one-time',
       description: `Custom recipe in ${landingConfig.foundingDropDeliveryHours}h. Skip the wait.`,

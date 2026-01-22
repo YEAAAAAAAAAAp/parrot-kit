@@ -8,20 +8,15 @@ export default function HowItWorks() {
     },
     {
       number: '2',
-      title: 'AI deconstructs the structure',
-      description: 'Extract Angle, Script, and Resolution—hook → beats → shot list → edit cues → CTA.',
+      title: 'AI analyzes the structure',
+      description: 'Hook → beats → shot list → edit cues → CTA.',
       icon: '🧠'
     },
     {
       number: '3',
-      title: 'Get a shoot-ready recipe',
-      description: 'Shot-by-shot breakdown with real-time chatbot editing. Tweak your recipe instantly, then shoot directly in-app with your phone.',
-      icon: '📋',
-      bullets: [
-        '📐 Shot-by-shot recipe breakdown',
-        '💬 Real-time chatbot recipe editor',
-        '📱 Direct in-app phone camera shooting'
-      ]
+      title: 'Get viral-ready templates',
+      description: 'Instructions you can follow today, and reuse as a template tomorrow.',
+      icon: '📋'
     }
   ]
 
@@ -57,12 +52,6 @@ export default function HowItWorks() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <p className="text-gray-500 italic">
-            Optional: generate a first draft video (coming soon).
-          </p>
         </div>
       </div>
     </section>

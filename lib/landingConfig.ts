@@ -9,8 +9,8 @@ export const landingConfig = {
   nextBatchDeadline: new Date('2026-01-29T23:59:59'), // 7일 후 (from Jan 22, 2026)
 
   // Founding Concierge Drop
-  foundingDropTotalSpots: 100,
-  foundingDropSpotsLeft: 77, // Update this manually as spots are taken
+  foundingDropTotalSpots: 500,
+  foundingDropSpotsLeft: 89, // Update this manually as spots are taken
   foundingDropOneTimePrice: 39,
   foundingDropDeliveryHours: 48,
   foundingDropRecipeCount: 3,

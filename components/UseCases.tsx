@@ -14,7 +14,7 @@ export default function UseCases() {
       gradient: 'from-pink-500 to-orange-500'
     },
     {
-      title: 'Agencies / teams',
+      title: 'Agencies / Teams',
       description: 'Standardize content production with reusable templates.',
       icon: '🏢',
       gradient: 'from-orange-500 to-purple-500'
@@ -26,7 +26,7 @@ export default function UseCases() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
-            For people who want to work <span className="text-purple-600">smarter, better, faster</span>
+            For creators who don't have <span className="text-purple-600">a viral video</span>
           </h2>
         </div>
 
