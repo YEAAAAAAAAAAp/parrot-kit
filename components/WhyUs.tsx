@@ -1,9 +1,10 @@
 export default function WhyUs() {
   const reasons = [
     {
-      title: 'Not just ideas.',
-      description: 'We output a production recipe you can actually follow.',
-      icon: '✅'
+      title: 'Angle',
+      description: 'Real-time camera angle adjustments from your phone—no reshoots needed.',
+      icon: '📐',
+      highlight: true
     },
     {
       title: 'Straightforward, appliable tips',

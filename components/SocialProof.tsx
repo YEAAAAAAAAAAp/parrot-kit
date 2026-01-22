@@ -39,7 +39,7 @@ export default function SocialProof() {
               onClick={handleJoinClick}
               className="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition font-semibold"
             >
-              Join us with 10K+ Creators
+              Join us with 10K+ UGC Creators
             </button>
             <button 
               onClick={handleInterviewClick}

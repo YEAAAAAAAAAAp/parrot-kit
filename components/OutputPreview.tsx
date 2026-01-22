@@ -19,7 +19,12 @@ export default function OutputPreview() {
           <h2 className="text-4xl md:text-5xl font-bold">
             The breakdown for repeatable <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">viral content</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Your complete recipe, delivered in seconds</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Deconstruct any winning video into a recipe you can customize and own
+          </p>
+          <p className="text-base text-gray-500 max-w-3xl mx-auto">
+            Edit with our chatbot, shoot shot-by-shot in-app, and build your signature style
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

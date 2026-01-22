@@ -4,9 +4,9 @@
 
 export const landingConfig = {
   // Next batch info
-  nextBatchDate: 'Jan 15, 2026',
+  nextBatchDate: 'Jan 29, 2026',
   nextBatchInvites: 500,
-  nextBatchDeadline: new Date('2026-01-08T23:59:59'), // 7일 후
+  nextBatchDeadline: new Date('2026-01-29T23:59:59'), // 7일 후 (from Jan 22, 2026)
 
   // Founding Concierge Drop
   foundingDropTotalSpots: 500,
@@ -28,7 +28,7 @@ export const landingConfig = {
 
   // Social proof
   waitlistCount: 10000,
-  creatorsJoined: '10K+',
+  creatorsJoined: '10K+', // UGC Creators
 
   // FOMO messages
   showWaitlistRank: true,

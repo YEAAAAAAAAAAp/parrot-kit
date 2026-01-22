@@ -23,8 +23,8 @@ export default function FinalCTA() {
 
 
   const roleOptions = [
-    { label: 'Aspiring creator', value: UserRole.ASPIRING },
-    { label: 'Prospective creator', value: UserRole.PROSPECTIVE },
+    { label: 'Aspiring UGC Creator', value: UserRole.ASPIRING },
+    { label: 'Prospective UGC Creator', value: UserRole.PROSPECTIVE },
     { label: 'Brand', value: UserRole.BRAND },
     { label: 'Marketer', value: UserRole.MARKETER },
     { label: 'Agency', value: UserRole.AGENCY }

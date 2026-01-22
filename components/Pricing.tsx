@@ -9,7 +9,7 @@ export default function Pricing() {
       name: 'Pro',
       price: `$${landingConfig.proMonthlyPrice}`,
       period: '/month',
-      description: 'For solo creators who want to ship consistently.',
+      description: 'For solo UGC creators who want to ship consistently.',
       features: [
         'Unlimited recipe breakdowns',
         'Save & reuse templates',
