@@ -249,7 +249,8 @@ export default function Hero() {
                           Analysis Complete! 🎉
                         </h3>
                         <p className="text-gray-600">
-                          Your detailed recipe is ready. Join the waitlist to unlock full access.
+                          Your detailed recipe is ready.<br />
+                          Get your Recipe right now!
                         </p>
                       </div>
 
