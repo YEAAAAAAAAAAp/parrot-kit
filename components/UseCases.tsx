@@ -2,14 +2,14 @@ export default function UseCases() {
   const cases = [
     {
       title: 'Aspiring UGC Creators',
-      description: 'Get your first 10 Shorts structured like winners.',
+      description: 'Get your first 10 short-form contents structured like winners.',
       icon: '🎬',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       title: 'Growing UGC Creators',
       subtitle: '10k–100k',
-      description: 'Ship more experiments per week by breaking down winning formats into repeatable templates.',
+      description: 'Convert other’s viral logic into your own custom templates. Ship 10x better content in half the time',
       icon: '📈',
       gradient: 'from-pink-500 to-orange-500'
     },
