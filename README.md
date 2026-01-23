@@ -125,7 +125,7 @@ export const landingConfig = {
   creatorsJoined: '10K+',
   
   // Contact (UPDATED!)
-  supportEmail: 'Parrotkit.contact@gmail.com'  // Changed from hello@parrotkit.com
+  supportEmail: 'parrotkit.contact@gmail.com'  // Changed from hello@parrotkit.com
 }
 ```
 
@@ -528,7 +528,7 @@ To use your own:
   - Button: "Get FREE Early Access"
   - Copy: "FREE for first 100" (was "$20 for first 100")
 - **Recipe Count**: Changed "3 custom recipes" to "Custom recipe" (singular)
-- **Email**: Updated to `Parrotkit.contact@gmail.com` (from `hello@parrotkit.com`)
+- **Email**: Updated to `parrotkit.contact@gmail.com` (from `hello@parrotkit.com`)
 
 ### ✅ Documentation
 - Created comprehensive setup guide with troubleshooting
@@ -632,7 +632,7 @@ MIT
 
 ## Support
 
-For questions: **Parrotkit.contact@gmail.com**
+For questions: **parrotkit.contact@gmail.com**
 
 ---
 

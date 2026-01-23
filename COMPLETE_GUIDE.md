@@ -248,7 +248,7 @@ export const landingConfig = {
   earlyBirdDeadline: 'Feb 15, 2025',
   
   // 연락처
-  supportEmail: 'Parrotkit.contact@gmail.com',
+  supportEmail: 'parrotkit.contact@gmail.com',
   
   // 기타
   nextBatchDate: 'Feb 1',
@@ -284,7 +284,7 @@ export const landingConfig = {
 **특징**:
 - Founding Drop을 **FREE**로 표시 (원래 $20)
 - Custom recipe (단수)
-- 이메일: Parrotkit.contact@gmail.com
+- 이메일: parrotkit.contact@gmail.com
 
 ### Analytics Dashboard
 
@@ -431,7 +431,7 @@ CREATE TABLE conversion_funnel (
 - "3 custom recipes" → "Custom recipe"
 
 #### 연락처 변경
-- hello@parrotkit.com → **Parrotkit.contact@gmail.com**
+- hello@parrotkit.com → **parrotkit.contact@gmail.com**
 
 ---
 
@@ -468,7 +468,7 @@ npm run build
 
 ## 📞 연락처
 
-- **Email**: Parrotkit.contact@gmail.com
+- **Email**: parrotkit.contact@gmail.com
 - **GitHub**: https://github.com/YEAAAAAAAAAAp/parrot-kit
 
 ---

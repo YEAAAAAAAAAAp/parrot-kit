@@ -2,13 +2,13 @@ export default function WhyUs() {
   const reasons = [
     {
       title: 'Angle',
-      description: 'Real-time camera angle adjustments from your phone—no reshoots needed.',
+      description: 'Real-time camera angle adjustments from your phone. Stop wasting hours on re-shoots, your first take is now your best take.',
       icon: '📐',
       highlight: true
     },
     {
       title: 'Straightforward, appliable tips',
-      description: 'We extract the exact structure that makes a Short work.',
+      description: 'We extract the exact structure that makes content actually work.',
       icon: '🎯'
     },
     {

@@ -9,7 +9,7 @@ export default function HowItWorks() {
     {
       number: '2',
       title: 'AI analyzes the structure',
-      description: 'Hook → beats → shot list → edit cues → CTA.',
+      description: 'Hook → Beats → Shot List → Edit Cues',
       icon: '🧠'
     },
     {

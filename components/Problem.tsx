@@ -10,8 +10,8 @@ export default function Problem() {
               </span>
             </div>
             <h2 className="text-4xl font-bold leading-tight">
-              You&apos;ve saved great references, but you don&apos;t have a{' '}
-              <span className="text-purple-600">winning viral-recipe</span> to shoot your own version
+              You&apos;ve saved great references, but you&apos;re{' '}
+              <span className="text-purple-600">missing the bridge</span> between inspiration and execution
             </h2>
           </div>
 

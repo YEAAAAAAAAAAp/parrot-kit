@@ -36,7 +36,7 @@ export const landingConfig = {
   showNextBatch: true,
 
   // Contact/support
-  supportEmail: 'Parrotkit.contact@gmail.com',
+  supportEmail: 'parrotkit.contact@gmail.com',
   foundingDropContactSubject: 'Founding Concierge Drop - Interest',
 } as const
 
