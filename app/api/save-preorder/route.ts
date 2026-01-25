@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { sql } from '@/lib/db'
 
 export async function POST(request: Request) {
   try {
@@ -13,16 +14,19 @@ export async function POST(request: Request) {
       )
     }
 
-    // TODO: 여기에 실제 데이터베이스 저장 로직 추가
-    // 예시: await db.preorders.create({ email, timestamp, amount, currency })
+    // Neon DB에 저장
+    const result = await sql`
+      INSERT INTO preorders (email, amount, currency, created_at)
+      VALUES (${email}, ${amount}, ${currency}, ${timestamp || new Date().toISOString()})
+      RETURNING id, email, created_at
+    `
     
-    // 임시로 콘솔에 로그 출력
-    console.log('💰 New Preorder:', {
-      email,
-      timestamp,
+    console.log('💰 New Preorder saved to DB:', {
+      id: result[0].id,
+      email: result[0].email,
       amount,
       currency,
-      date: new Date(timestamp).toLocaleString()
+      created_at: result[0].created_at
     })
 
     // TODO: 이메일 발송 로직 추가 (선택사항)
@@ -30,12 +34,13 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Preorder saved successfully'
+      message: 'Preorder saved successfully',
+      data: result[0]
     })
   } catch (error) {
     console.error('Error saving preorder:', error)
     return NextResponse.json(
-      { error: 'Failed to save preorder' },
+      { error: 'Failed to save preorder', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     )
   }

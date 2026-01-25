@@ -344,36 +344,48 @@ export default function PreorderPage() {
                     </div>
 
                     {/* PayPal Button */}
-                    {!isEmailValid && (
-                      <div className="bg-gray-100 border-2 border-gray-300 rounded-lg p-6 text-center text-gray-500">
-                        <svg className="w-12 h-12 mx-auto mb-2 opacity-50" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                        </svg>
-                        <p className="text-sm font-medium">Enter your email to continue</p>
-                      </div>
-                    )}
-                    {isEmailValid && !isButtonRendered && !renderError && (
-                      <div className="text-center text-gray-500 py-10">
-                        <svg className="animate-spin h-8 w-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Loading secure payment...
-                      </div>
-                    )}
-                    {renderError && (
-                      <div className="text-center text-red-600 py-6">
-                        <p className="mb-4">Unable to load payment options.</p>
-                        <button 
-                          onClick={() => window.location.reload()}
-                          className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition"
-                        >
-                          Refresh Page
-                        </button>
-                      </div>
-                    )}
-                    {isEmailValid && <div id="paypal-container-Q2CKSCLB479NS" className="w-full"></div>}
+                    <div className="relative">
+                      {/* Email Required Overlay */}
+                      {!isEmailValid && (
+                        <div className="absolute inset-0 z-10 bg-gray-100 border-2 border-gray-300 rounded-lg p-6 text-center text-gray-500 flex flex-col items-center justify-center">
+                          <svg className="w-12 h-12 mb-2 opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                          </svg>
+                          <p className="text-sm font-medium">Enter your email to continue</p>
+                        </div>
+                      )}
+                      
+                      {/* Loading State */}
+                      {isEmailValid && !isButtonRendered && !renderError && (
+                        <div className="text-center text-gray-500 py-10">
+                          <svg className="animate-spin h-8 w-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Loading secure payment...
+                        </div>
+                      )}
+                      
+                      {/* Error State */}
+                      {renderError && (
+                        <div className="text-center text-red-600 py-6">
+                          <p className="mb-4">Unable to load payment options.</p>
+                          <button 
+                            onClick={() => window.location.reload()}
+                            className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition"
+                          >
+                            Refresh Page
+                          </button>
+                        </div>
+                      )}
+                      
+                      {/* PayPal Container - Always rendered */}
+                      <div 
+                        id="paypal-container-Q2CKSCLB479NS" 
+                        className={`w-full min-h-[150px] ${!isEmailValid || !isButtonRendered ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-300`}
+                      ></div>
+                    </div>
 
                     {/* Payment Icons */}
                     <div className="flex items-center justify-center gap-3 mt-6 pt-6 border-t border-gray-200">
